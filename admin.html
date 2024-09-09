@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container-fluid {
+            display: flex; /* Menggunakan flexbox untuk layout */
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            height: 100vh; /* Tinggi penuh */
+            color: #000;
+        }
+
+        .main-content {
+            padding: 20px;
+            background-color: #eaeaea;
+            flex-grow: 1; /* Membuat konten utama mengambil sisa ruang */
+        }
+
+        .nav-link {
+            color: #000 !important;
+        }
+
+        .content-section {
+            display: none; /* Sembunyikan semua konten awal */
+        }
+        .content-section.active {
+            display: block; /* Tampilkan konten aktif */
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        #lineChart {
+            max-width: 600px;
+            margin: auto;
+            height: 350px; /* Pastikan tinggi ditetapkan */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h5><i class="fa-solid fa-book-open-reader me-2"></i> Buku Tamu</h5>
+            <hr class="bg-secondary" />
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#kunjungan">Kunjungan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#laporan">Laporan</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Konten Utama -->
+        <div class="main-content">
+            <div id="dashboard" class="content-section active">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Line Chart</h5>
+
+                            <!-- Line Chart -->
+                            <div id="lineChart"></div>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                    new ApexCharts(document.querySelector("#lineChart"), {
+                                        series: [
+                                            {
+                                                name: "Desktops",
+                                                data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+                                            },
+                                        ],
+                                        chart: {
+                                            height: 350,
+                                            type: "line",
+                                            zoom: {
+                                                enabled: false,
+                                            },
+                                        },
+                                        dataLabels: {
+                                            enabled: false,
+                                        },
+                                        stroke: {
+                                            curve: "straight",
+                                        },
+                                        grid: {
+                                            row: {
+                                                colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+                                                opacity: 0.5,
+                                            },
+                                        },
+                                        xaxis: {
+                                            categories: [
+                                                "Jan",
+                                                "Feb",
+                                                "Mar",
+                                                "Apr",
+                                                "May",
+                                                "Jun",
+                                                "Jul",
+                                                "Aug",
+                                                "Sep",
+                                            ],
+                                        },
+                                    }).render();
+                                });
+                            </script>
+                            <!-- End Line Chart -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="kunjungan" class="content-section">
+              <div class="row">
+                <div class="col sm-6 col-md-4">
+                  <input type="text" class="form-control" placeholder="Nama" aria-label="First name">
+                </div>
+                <div class="col sm-6 col-md-4">
+                  <input type="text" class="form-control" placeholder="NIK/NIP" aria-label="Last name">
+                </div>
+              </div>
+            <div id="laporan" class="content-section">
+                <h2>Laporan</h2>
+                <p>Konten untuk Laporan...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Menangani klik pada tautan sidebar
+        $(".nav-link").on("click", function (e) {
+            e.preventDefault(); // Mencegah perilaku default tautan
+            $(".content-section").removeClass("active"); // Sembunyikan semua konten
+            const target = $(this).attr("href"); // Ambil ID dari tautan
+            $(target).addClass("active"); // Tampilkan konten yang sesuai
+        });
+    </script>
+</body>
+</html>

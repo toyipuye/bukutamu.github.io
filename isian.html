@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      .contennya{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; 
+        padding: 20px; 
+        
+      }
+      .kartunya{
+        width: 1000px;
+        padding: 16px;
+        border: 2px solid #dee2e6;
+        border-radius: 0.8rem;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0.4, 0.2);
+        
+      }
+      .kartunya p{
+        text-align: center;
+        color: rgb(31, 159, 251);
+        font-size: 30px;
+        font-weight: 700;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+      }
+      .col-auto{
+        display: flex;
+        justify-content:end ;
+        gap: 1rem;
+      }
+
+    </style>
+  </head>
+
+  <div class="contennya">
+    <div class="card kartunya">
+      <form class="px-1 py-">
+        <body class="p-2 m-0 border-0 bd-example m- border-0">
+          <p>Form Buku Tamu</p>    
+            <div class="mb-2 row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Nama</label>
+              <div class="col-sm-10">
+                <input type="" class="form-control" id="inputPassword">
+              </div>
+            </div>
+
+            <div class="mb-2 row">
+              <label class="col-sm-2 col-form-label">Opsi</label>
+              <div class="col-sm-10 d-flex align-items-center">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                  <label class="form-check-label" for="inlineRadio1">Laki-Laki</label>
+                </div>
+                <div class="form-check form-check-inline ms-3">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                  <label class="form-check-label" for="inlineRadio2">Perempuan</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mb-2 row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">NIP/NIK</label>
+              <div class="col-sm-10">
+                <input type="" class="form-control" id="inputPassword">
+              </div>
+            </div>
+
+            <div class="mb-2 row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">No. Telepon</label>
+              <div class="col-sm-10">
+                <input type="" class="form-control" id="inputPassword">
+              </div>
+            </div>
+
+            <div class="mb-3 row">
+              <label for="inputAlamat" class="col-sm-2 col-form-label">Alamat</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="inputAlamat" rows="3"></textarea>
+              </div>
+            </div>
+
+            <div class="mb-2 row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Instansi</label>
+              <div class="col-sm-10">
+                <input type="" class="form-control" id="inputPassword">
+              </div>
+            </div>
+
+            
+            <div class="mb-3 row">
+              <label for="inputAlamat" class="col-sm-2 col-form-label">Alamat Instansi</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="inputAlamat" rows="3"></textarea>
+              </div>
+            </div>
+
+            <div class="mb-2 row">
+              <label for="inputPassword" class="col-sm-2 col-form-label">Jabatan</label>
+              <div class="col-sm-10">
+                <input type="" class="form-control" id="inputPassword">
+              </div>
+            </div>
+
+            <div class="mb-2 row">
+              <label for="floatingSelect" class="col-sm-2 col-form-label">Keperluan</label>
+              <div class="col-sm-10">
+                <div class="form-floating">
+                  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected>-Keperluan-</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <label for="floatingSelect">Pilih Salah satu</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mb-3 row">
+              <label for="inputAlamat" class="col-sm-2 col-form-label">Deskipsi</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" id="inputAlamat" rows="3"></textarea>
+              </div>
+            </div>
+            
+            <br>
+            <div class="col-auto">
+              
+              <button type="button" class="btn btn-primary" onclick="location.href='index.html'">Kembali
+              <button type="button" class="btn btn-primary" onclick="location.href='index.html'">Simpan
+            </div>
+      </form>
+    </div>
+
+    
+  </div>
+  
+    
+      
+</html>
